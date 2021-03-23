@@ -12,6 +12,15 @@ app.get("/", (req, res) => {
   res.send("Hello from Express!");
 });
 
+app.get("/*xyz", (req, res) => {
+  res.send(`That's all I wrote.`);
+})
+
+app.get("/capital-letters/:str", (req, res) => {
+  // let upperCased = `${req.params.str}`.toUpperCase();
+  res.send(`${req.params.str}`.toUpperCase());
+})
+
 app.all("*", (req, res) => {
   //   console.log(req.method);
   let random = Math.floor(Math.random() * 10);
