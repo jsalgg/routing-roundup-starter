@@ -35,7 +35,7 @@ app.get(["/margot/:str", "/margeaux/:str"], (req, res) => {
 });
 
 app.get("/about/foo", (req, res) => {
-  res.send(404);
+  res.sendStatus(404);
 });
 
 app.all("*", (req, res) => {
